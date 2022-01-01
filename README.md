@@ -1,15 +1,15 @@
 # CNN for sound classification
-Feature extraction of sound signals along with complete CNN model fitting and evaluations.
 
 <b>Note:</b> Uncomment the MFCC extraction block to work with your own sounds. Otherwise, I have also provided a sample dataset i.e. <b>dataset.npy</b>.
 
 # About dataset.npy
 1. Cepstral Coefficients of dimension (178,44,13) where 178 are number of audio, 44 is the number of samples for each audio and 13 are number of Coefficients.
-
 2. Labels of dimension (178,)
 
 ## Using Librosa for Feature Extraction
-Generates 13 MFCCs (Columns), 44 Samples (Rows) for each sound signal and a Target column (Label) in addition to 13 MFCCs. (Review the dataset.csv to have an idea about shape of final data)
+Generates 44x13 2D image for each sound signal and a Target column (Label)
+
+
 ### REVIEW THE GRAPHS BELOW
 
 ## Quick guide
@@ -34,7 +34,7 @@ Generates 13 MFCCs (Columns), 44 Samples (Rows) for each sound signal and a Targ
 ![MFCCs](https://user-images.githubusercontent.com/62377713/119189297-52624f00-ba95-11eb-909c-18b32687b2ee.PNG)
 
 ## Key points
-1. This code rejects the audio signals having lower sample rate than 22050. <br>
+1. This implementation rejects the audio signals having lower sample rate than 22050. <br>
 2. Number of MFCCs selected are 13.
 3. Hop length across the signal is 512.
 4. Number of fast fourier transformation is 2048.
